@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Brandon Davis, and I am a software engineer building apps and libraries for the Android platform. I also co-organize a local [Android developer meetup.](https://www.meetup.com/denverdroids/)
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+Currently, I work at [Comcast VIPER](https://stackoverflow.com/jobs/companies/comcast-viper) on the Player Platform team where we build libraries to stream video to millions of users. Previously, I worked at [Possible Mobile](https://possiblemobile.com/) building apps for clients like PGA TOUR and Major League Soccer.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I am hoping to use this blog to build on my current information sharing skills and I really hope you enjoy it!
