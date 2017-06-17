@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Between Two Bits
+author: Brandon Davis
 email: BetweenTwoBits@gmail.com
 description: Thoughts on Android Development.
 baseurl: "" # the subpath of your site, e.g. /blog
