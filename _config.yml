@@ -18,7 +18,7 @@ author: Brandon Davis
 email: BetweenTwoBits@gmail.com
 description: Thoughts on Android Development.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://betweentwobits.com"
+url: "http://betweentwobits.com"
 twitter_username: xBrandonDavisx
 github_username:  brandon-a-davis
 google_analytics: UA-101242681-1
