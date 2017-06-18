@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why developers should "waste" their time at meetups
+comments: true
 ---
 
 ### The Backstory

@@ -22,6 +22,8 @@ url: "https://betweentwobits.com"
 twitter_username: xBrandonDavisx
 github_username:  brandon-a-davis
 google_analytics: UA-101242681-1
+disqus:
+    shortname: betweentwobits
 
 # Build settings
 markdown: kramdown
