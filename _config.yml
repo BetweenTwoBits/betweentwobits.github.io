@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://betweentwobits.com"
 twitter_username: xBrandonDavisx
 github_username:  brandon-a-davis
+google_analytics: UA-101242681-1
 
 # Build settings
 markdown: kramdown
