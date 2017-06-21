@@ -19,8 +19,8 @@ email: BetweenTwoBits@gmail.com
 description: Thoughts on Android Development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://betweentwobits.com"
-twitter_username: xBrandonDavisx
-github_username:  brandon-a-davis
+twitter_username: BetweenTwoBits
+github_username:  BetweenTwoBits
 google_analytics: UA-101242681-1
 disqus:
     shortname: betweentwobits
