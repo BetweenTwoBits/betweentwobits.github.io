@@ -3,33 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://betweentwobits.com/posts/my-first-post/</loc>
+    <loc>betweentwobits.com/posts/my-first-post/</loc>
     <lastmod>2018-10-01T12:16:07-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://betweentwobits.com/about/</loc>
+    <loc>betweentwobits.com/about/</loc>
   </url>
   
   <url>
-    <loc>http://betweentwobits.com/</loc>
-    <lastmod>2018-10-01T12:16:07-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://betweentwobits.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://betweentwobits.com/posts/</loc>
+    <loc>betweentwobits.com/</loc>
     <lastmod>2018-10-01T12:16:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://betweentwobits.com/tags/</loc>
+    <loc>betweentwobits.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>betweentwobits.com/posts/</loc>
+    <lastmod>2018-10-01T12:16:07-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>betweentwobits.com/tags/</loc>
     <priority>0</priority>
   </url>
   
