@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Between Two Bits</title>
+    <link>https://betweentwobits.com/tags/about/</link>
+    <description>Recent content in About on Between Two Bits</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://betweentwobits.com/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://betweentwobits.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://betweentwobits.com/about/</guid>
+      <description>My name is Brandon Davis, and I am a software engineer building apps and libraries for the Android platform. I also co-organize a local Android developer meetup.
+Currently, I&amp;rsquo;m working at Comcast VIPER (Video IP Engineering and Research), building libraries to help stream video to millions of users. Previously, I worked at Possible Mobile building apps for clients like PGA TOUR and Major League Soccer.
+My intent is to use this blog to build on my current information sharing skills.</description>
+    </item>
+    
+  </channel>
+</rss>
