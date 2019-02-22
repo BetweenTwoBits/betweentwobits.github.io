@@ -6,6 +6,7 @@
     <description>Recent content in Posts on Between Two Bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://betweentwobits.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>Gradle 5.0 - Cannot Find Symbol</title>
       <link>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</guid>
       <description>Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:

@@ -6,9 +6,20 @@
     <description>Recent content on Between Two Bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://betweentwobits.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradle 5.0 - Cannot Find Symbol</title>
+      <link>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</guid>
+      <description>Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:
+symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol verify(view).simpleTest(); ^  In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -19,16 +30,6 @@
       <description>My name is Brandon Davis, and I am a software engineer building apps and libraries for the Android platform. I also co-organize a local Android developer meetup.
 Currently, I&amp;rsquo;m working at Comcast VIPER (Video IP Engineering and Research), building libraries to help stream video to millions of users. Previously, I worked at Possible Mobile building apps for clients like PGA TOUR and Major League Soccer.
 My intent is to use this blog to build on my current information sharing skills.</description>
-    </item>
-    
-    <item>
-      <title>Gradle 5.0 - Cannot Find Symbol</title>
-      <link>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</guid>
-      <description>Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:
-symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol verify(view).simpleTest(); ^  In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?</description>
     </item>
     
   </channel>
