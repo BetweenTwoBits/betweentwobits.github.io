@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://betweentwobits.com/posts/my-first-post/</loc>
-    <lastmod>2018-10-01T12:16:07-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://betweentwobits.com/tags/about/</loc>
     <priority>0</priority>
   </url>
@@ -18,7 +13,6 @@
   
   <url>
     <loc>https://betweentwobits.com/</loc>
-    <lastmod>2018-10-01T12:16:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -28,8 +22,11 @@
   </url>
   
   <url>
+    <loc>https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/</loc>
+  </url>
+  
+  <url>
     <loc>https://betweentwobits.com/posts/</loc>
-    <lastmod>2018-10-01T12:16:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   

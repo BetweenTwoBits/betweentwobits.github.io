@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.54.0" />
+
+    
+    
+    
+
+<title>Gradle 5.0 - Cannot Find Symbol • Between Two Bits</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gradle 5.0 - Cannot Find Symbol"/>
+<meta name="twitter:description" content="Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:
+symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol verify(view).simpleTest(); ^  In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?"/>
+
+<meta property="og:title" content="Gradle 5.0 - Cannot Find Symbol" />
+<meta property="og:description" content="Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:
+symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol verify(view).simpleTest(); ^  In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://betweentwobits.com/posts/gradle_5_cannot_find_symbol/" />
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://betweentwobits.com/">Between Two Bits</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://betweentwobits.com//img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Little green robots and software engineering. 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Between Two Bits</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/BetweenTwoBits" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/BetweenTwoBits" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:BetweenTwoBits&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <p class="copyright">
+      &copy; 2019 Brandon Davis.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Gradle 5.0 - Cannot Find Symbol</h1>
+    
+    
+<div class="post__meta">
+    
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<h1 id="problem">Problem</h1>
+
+<p>If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:</p>
+
+<pre><code class="language-log"> symbol:   method verify(View)
+  location: class ExampleTests
+[FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol
+        verify(view).simpleTest();
+        ^
+</code></pre>
+
+<p>In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?</p>
+
+<p>Taking a look at the Gradle 5.0 upgrade guide, I found <a href="https://docs.gradle.org/current/userguide/upgrading_version_4.html#rel5.0:pom_compile_runtime_separation">this section</a> that explains the issue.</p>
+
+<p>The important bit is here:
+&gt;With this new behavior, the Java and Java Library plugins both honor the <a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation">separation of compile and runtime scopes.</a> This means that the compilation classpath only includes compile-scoped dependencies, while the runtime classpath adds the runtime-scoped dependencies as well. This is particularly useful if you develop and publish Java libraries with Gradle where the separation between api and implementation dependencies is reflected in the published scopes.</p>
+
+<p>If this means as much to you as it did to me(nothing), here is the breakdown:</p>
+
+<p>Previously, dependencies IN your dependencies could be used by your code without you including them in your build.gradle. Now, if they aren&rsquo;t setup to be transitive, they won&rsquo;t be available.</p>
+
+<p>How do we know if they are transitive? In the case of Mockito Inline (what I was using), we need to check the <a href="http://central.maven.org/maven2/org/mockito/mockito-inline/2.9.0/mockito-inline-2.9.0.pom">.pom file</a> that describes the dependency.</p>
+
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mockito&lt;/groupId&gt;
+        &lt;artifactId&gt;mockito-core&lt;/artifactId&gt;
+        &lt;version&gt;2.9.0&lt;/version&gt;
+        &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+
+<p>The scope here being set to <code>runtime</code> means we can no longer use the mockito-core classes by importing the mockito-inline dependency.</p>
+
+<h1 id="solutions">Solutions</h1>
+
+<h2 id="1-manually-include-the-dependecy">1: Manually include the dependecy</h2>
+
+<p>Instead of using this:</p>
+
+<pre><code class="language-gradle">implementation(&quot;rg.mockito:mockito-inline:2.9.0&quot;)
+</code></pre>
+
+<p>Use this:</p>
+
+<pre><code class="language-gradle">implementation(&quot;rg.mockito:mockito-core:2.9.0&quot;)
+implementation(&quot;rg.mockito:mockito-inline:2.9.0&quot;)
+</code></pre>
+
+<h2 id="2-check-the-dependency-for-updates">2: Check the dependency for updates</h2>
+
+<p>Realizing my dependecy was out of date, I looked at the <a href="http://central.maven.org/maven2/org/mockito/mockito-inline/2.23.0/mockito-inline-2.23.0.pom">.pom file</a> for the newest version (2.24.0 at time of writing) of Mockito Inline.</p>
+
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mockito&lt;/groupId&gt;
+        &lt;artifactId&gt;mockito-core&lt;/artifactId&gt;
+        &lt;version&gt;2.23.0&lt;/version&gt;
+        &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+
+<p>Now that the scope is listed as <code>compile</code> mockito-core methods can be used without definining it as a dependency in my file.</p>
+
+<h1 id="wrap-up">Wrap up</h1>
+
+<p>Building the project once again using either of these methods should yeild similar results to building before your Gradle upgrade. Happy building!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'betweentwobits';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-101242681-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

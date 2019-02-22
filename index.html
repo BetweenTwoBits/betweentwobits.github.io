@@ -24,7 +24,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://betweentwobits.com/" />
 
-<meta property="og:updated_time" content="2018-10-01T12:16:07-06:00"/>
 
 
     
@@ -146,15 +145,18 @@
     
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/posts/my-first-post/">My First Post</a>
+          <a href="/posts/gradle_5_cannot_find_symbol/">Gradle 5.0 - Cannot Find Symbol</a>
           
         </span>
         <span class="item__date">
-          Oct 01, 2018
+          Jan 01, 0001
         </span>
         
-         Welcome to the blog, content coming soon. 
+        Problem If you have recently attempted to upgrade your project to Gradle 5.x from the 4.x release, you may encounter something that looks like this:
+symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBER]: error: cannot find symbol verify(view).simpleTest(); ^  In the example above, verify() is a method from Mockito Core which is a transitive dependency we have access to through using Mockito Inline in our project. We have been using the dependency this way for quite a while, so why is it broken now?
         
+        
+          ... <a class="read-more-symbol" href="/posts/gradle_5_cannot_find_symbol/">➦</a>
         
         </div>
      
