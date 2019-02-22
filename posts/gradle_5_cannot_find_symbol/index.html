@@ -184,8 +184,11 @@ symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBE
 
 <p>Taking a look at the Gradle 5.0 upgrade guide, I found <a href="https://docs.gradle.org/current/userguide/upgrading_version_4.html#rel5.0:pom_compile_runtime_separation">this section</a> that explains the issue.</p>
 
-<p>The important bit is here:
-&gt;With this new behavior, the Java and Java Library plugins both honor the <a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation">separation of compile and runtime scopes.</a> This means that the compilation classpath only includes compile-scoped dependencies, while the runtime classpath adds the runtime-scoped dependencies as well. This is particularly useful if you develop and publish Java libraries with Gradle where the separation between api and implementation dependencies is reflected in the published scopes.</p>
+<p>The important bit is here:</p>
+
+<blockquote>
+<p>With this new behavior, the Java and Java Library plugins both honor the <a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation">separation of compile and runtime scopes.</a> This means that the compilation classpath only includes compile-scoped dependencies, while the runtime classpath adds the runtime-scoped dependencies as well. This is particularly useful if you develop and publish Java libraries with Gradle where the separation between api and implementation dependencies is reflected in the published scopes.</p>
+</blockquote>
 
 <p>If this means as much to you as it did to me(nothing), here is the breakdown:</p>
 
@@ -211,12 +214,12 @@ symbol: method verify(View) location: class ExampleTests [FILE_PATH]:[LINE_NUMBE
 
 <p>Instead of using this:</p>
 
-<pre><code class="language-gradle">implementation(&quot;rg.mockito:mockito-inline:2.9.0&quot;)
+<pre><code class="language-groovy">implementation(&quot;rg.mockito:mockito-inline:2.9.0&quot;)
 </code></pre>
 
 <p>Use this:</p>
 
-<pre><code class="language-gradle">implementation(&quot;rg.mockito:mockito-core:2.9.0&quot;)
+<pre><code class="language-groovy">implementation(&quot;rg.mockito:mockito-core:2.9.0&quot;)
 implementation(&quot;rg.mockito:mockito-inline:2.9.0&quot;)
 </code></pre>
 
